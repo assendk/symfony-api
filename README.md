@@ -1,10 +1,10 @@
-#Very basic Symfony 5.4 api
+# Very basic Symfony 5.4 api
 with 2 end points
 Requirements:
 - php7.4+
 - docker and docker-compose or mariadb10.5.8+
 
-##Run:
+## Run:
 - composer install
 - generate you own APP_SECRET in .env
 - setup the database in the .env file or use "docker-compose up -d" in the project root with the provided demo (change the password)
@@ -12,13 +12,13 @@ Requirements:
 - php bin/console doctrine:migrations:migrate
 - php bin/console server:start
 
-##Usage:
-###Insert
+## Usage:
+### Insert
 - https://127.0.0.1:8001/api/insert, set POST (change the port in the url, check the https)
 - add a json string in the body
   {"title": "Test title", "content": "Test article body", "created_at": "2023-01-01 01:00:00", "publish_at": "2023-02-01 02:00:00", "status": "active"}
   
-###Read example
+### Read example
 - https://127.0.0.1:8001/api/show/all/{format} show all
 - https://127.0.0.1:8001/api/show/active/{format} filter only with status active
 - Supported formats are: json, xml, csv'
