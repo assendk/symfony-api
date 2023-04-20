@@ -1,12 +1,13 @@
 # Very basic Symfony 5.4 api
-with 2 end points
-Requirements:
+With 2 end points - insert and read
+## Requirements:
 - php7.4+
 - docker and docker-compose or mariadb10.5.8+
+- if you have the symfony binary installed you can run "symfony check:requirements"
 
 ## Run:
 - composer install
-- generate you own APP_SECRET in .env
+- generate you own APP_SECRET in .env (*read below how)
 - setup the database in the .env file or use "docker-compose up -d" in the project root with the provided demo (change the password)
 - php bin/console make:migration
 - php bin/console doctrine:migrations:migrate
@@ -28,7 +29,7 @@ Requirements:
   page=2 is the number of the page to display
   limit=2 how many articles per page to display
   
-## To generate you own Auth key
+## To generate you own Auth key*
 ### Using OpenSSL
 openssl rand -hex 32
 ### Using PHP
