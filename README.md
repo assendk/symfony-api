@@ -11,7 +11,7 @@ With 2 end points - insert and read
 - setup the database in the .env file or use "docker-compose up -d" in the project root with the provided demo (change the password)
 - php bin/console make:migration
 - php bin/console doctrine:migrations:migrate
-- php bin/console server:start
+- symfony serve, use your own virtual host or install the required package and run php bin/console server:start
 
 ## Usage:
 ### Insert
