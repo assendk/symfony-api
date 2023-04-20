@@ -39,6 +39,19 @@ class ArticleRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * Find only active Articles
+     * @return array
+     */
+    public function findActive(): array
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.status = :status')
+            ->setParameter('status', 'active')
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return Article[] Returns an array of Article objects
 //     */
