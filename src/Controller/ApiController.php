@@ -19,6 +19,7 @@ class ApiController extends AbstractController
 {
     /**
      * @Route("/api/insert", name="api_insert", methods={"POST"})
+     * @throws \Exception
      */
     public function insert(Request $request, ValidatorInterface $validator): JsonResponse
     {
@@ -26,7 +27,9 @@ class ApiController extends AbstractController
 
         $article = new Article();
         $article->setTitle($data['title']);
+        $article->setContent($data['content']);
         $article->setCreatedAt(new \DateTime($data['created_at']));
+        $article->setPublishAt(new \DateTime($data['publish_at']));
         $article->setStatus($data['status']);
 
         $errors = $validator->validate($article);

@@ -24,14 +24,14 @@ class Article
     private $title;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $content;
+
+    /**
      * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
      */
     private $created_at;
-
-    /**
-     * @ORM\Column(type="string", length="64")
-     */
-    private $status;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -39,9 +39,11 @@ class Article
     private $publish_at;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="string", length="64")
      */
-    private $content;
+    private $status;
+
+
 
     public function getId(): ?int
     {
